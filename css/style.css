@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+  font-family: "poppins", serif;
+  background-image: url("../images/concrete_seamless.png");
+  background-color: #f1f1f1;
+  }
+
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+
+.nav_link {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+a:link, a:visited{
+  color: blue;
+}
+
+.card > header{
+  background: #288088;
+  border: 2px solid #45ADAD;
+  padding: 20px 0px 20px 0px;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.pricing{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing .card {
+  border-radius: 50px 50px 0px 0px;
+  flex-basis: 450px;
+}
+
+.gallery img{
+  border: 10px solid #50C7C7;
+  margin: 10px;
+  width: 300px;
+}
+
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@keyframes mymove {
+  from  {
+  opacity: 0;
+  width: 25px;}
+  to {
+  opacity: 1;
+  width: 475px;}
+}
+
+#logo{
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+
+@media only screen and (min-width: 900px) {
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav_links{
+    display: flex;
+  }
+
+  body > header{
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .pricing .card{
+    flex-basis: 250px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+  #logo{
+    animation: none;
+  }
+}
+
+@media print {
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: none;
+  }
+
+  .nav_links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .pricing{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .pricing .card{
+    flex-basis: 325px;
+    border: solid 2px #45ADDD;
+
+  }
+
+  #gallery,.gallery{
+      display: none;
+  }
+
+  .card li:nth-child(2n):after {
+  content: "👍";
+  }
+
+}
